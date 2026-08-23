@@ -41,10 +41,16 @@ Utána: <http://localhost:4321>
 
 ## Élő előnézet
 
-**<https://velunamed.github.io/dr-glass-demo/>**
+**<https://demo.dr-glass.eu/>**
 
-GitHub Pages szolgálja ki a `main` ág gyökeréből. Bárki megnyithatja, akinek
-elküldöd a linket — nem kell hozzá bejelentkezés.
+GitHub Pages szolgálja ki a `main` ág gyökeréből, saját aldoménen, HTTPS-sel.
+Bárki megnyithatja, akinek elküldöd a linket — nem kell hozzá bejelentkezés.
+
+A régi `velunamed.github.io/dr-glass-demo/` cím 301-gyel ide irányít át.
+
+A `demo` egy CNAME rekord a dns24.hu-n, ami a `velunamed.github.io`-ra mutat.
+A repó gyökerében lévő `CNAME` fájl tartja meg a beállítást — **ne töröld**.
+Az éles `dr-glass.eu`-t (A rekord: 91.227.139.59) ez nem érinti.
 
 Frissítés: elég pusholni, a Pages 1–2 percen belül újraépíti.
 
