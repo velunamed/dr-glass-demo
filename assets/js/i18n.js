@@ -245,7 +245,7 @@ window.DRG_I18N = {
 
   sk: {
     "meta.title": "Dr.Glass – Oprava predného skla, leštenie svetlometov, ozónová čistička klímy",
-    "meta.desc": "Prémiová oprava čelných skiel už od 35 €, leštenie svetlometov a ozónová dezinfekcia klimatizácie v Ostrihome a Štúrove. Materiály z USA, 1-ročná záruka, zľavy pre flotily.",
+    "meta.desc": "Prémiová oprava čelných skiel už od 35 €, leštenie svetlometov a ozónová dezinfekcia klimatizácie v Esztergome a Štúrove. Materiály z USA, 1-ročná záruka, zľavy pre flotily.",
 
     "nav.services": "Služby",
     "nav.resto": "Renovácia",
@@ -258,7 +258,7 @@ window.DRG_I18N = {
     "nav.menu": "Menu",
 
     "hero.badgeTag": "Od roku 2016",
-    "hero.badge": "Ostrihom &amp; Štúrovo",
+    "hero.badge": "Esztergom &amp; Štúrovo",
     "hero.title": "Odpraskané sklo, praskliny? <em>My to opravíme.</em>",
     "hero.sub": "Prémiová oprava predných skiel, leštenie svetlometov a ozónová čistička klimatizácie. Pracujeme s materiálmi dovážanými z USA a dávame 1-ročnú záruku – už od 35 €.",
     "hero.cta1": "Zavolať teraz",
@@ -272,7 +272,7 @@ window.DRG_I18N = {
     "stat2.num": "1<i> rok</i>",
     "stat2.lbl": "záruka na každú prémiovú službu",
     "stat3.num": "2",
-    "stat3.lbl": "prevádzky – Ostrihom (HU) a Štúrovo (SK)",
+    "stat3.lbl": "prevádzky – Esztergom (HU) a Štúrovo (SK)",
     "stat4.num": "5<i>+</i>",
     "stat4.lbl": "prémiových opravných systémov z USA a Európy",
 
@@ -328,7 +328,7 @@ window.DRG_I18N = {
     "proc1.t": "Pošlite fotku",
     "proc1.p": "Zavolajte nám alebo napíšte cez formulár a pošlite fotku poškodenia. Povieme vám, či sa dá opraviť.",
     "proc2.t": "Dohodnutie termínu",
-    "proc2.p": "V Ostrihome pri OMV, alebo v Štúrove na Komenského ulici. Pri viacerých vozidlách prídeme aj za vami.",
+    "proc2.p": "V Esztergome pri OMV, alebo v Štúrove na Komenského ulici. Pri viacerých vozidlách prídeme aj za vami.",
     "proc3.t": "Oprava na mieste",
     "proc3.p": "Pracujeme s prémiovou živicou dovážanou z USA a profesionálnym injektorom – väčšina poškodení je hotová počas čakania.",
     "proc4.t": "1-ročná záruka",
@@ -408,7 +408,7 @@ window.DRG_I18N = {
     "ab2.t": "1-ročná záruka",
     "ab2.p": "Na všetky naše prémiové služby poskytujeme plnú jednoročnú záruku.",
     "ab3.t": "Dve prevádzky, výjazd k flotilám",
-    "ab3.p": "Ostrihom (OMV) a Štúrovo. Pri oprave viacerých vozidiel prídeme aj za vami.",
+    "ab3.p": "Esztergom (OMV) a Štúrovo. Pri oprave viacerých vozidiel prídeme aj za vami.",
     "ab4.t": "Oprava namiesto výmeny",
     "ab4.p": "Oprava stojí zlomok ceny výmeny skla a ostane vám originálne sklo.",
     "ab.stampNum": "2016",
@@ -448,7 +448,7 @@ window.DRG_I18N = {
     "ct.hint": "Formulár otvorí váš predvolený e-mailový program s vyplnenými údajmi.",
     "ct.emailLbl": "E-mailová adresa",
     "ct.phoneLbl": "Telefónne číslo",
-    "ct.addr1": "Prevádzka Ostrihom",
+    "ct.addr1": "Prevádzka Esztergom",
     "ct.addr1v": "2509 Esztergom, Kesztölci út sarok (OMV)",
     "ct.addr2": "Prevádzka Štúrovo",
     "ct.addr2v": "Štúrovo, Komenského 323/141",
@@ -461,7 +461,7 @@ window.DRG_I18N = {
     "cta.b1": "+36 20 391 4936",
     "cta.b2": "+421 950 349 732",
 
-    "ft.about": "Prémiová oprava predných skiel, leštenie svetlometov a ozónová čistička klímy od roku 2016 – v Ostrihome a Štúrove.",
+    "ft.about": "Prémiová oprava predných skiel, leštenie svetlometov a ozónová čistička klímy od roku 2016 – v Esztergome a Štúrove.",
     "ft.nav": "Stránky",
     "ft.srv": "Služby",
     "ft.contact": "Kontakt",

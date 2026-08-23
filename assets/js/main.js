@@ -14,6 +14,9 @@
   var LANGS = ["hu", "sk"];
   var STORE = "drglass.lang";
 
+  // az elsődleges hívás gombok a nyelvhez tartozó számot tárcsázzák
+  var TEL = { hu: "+36203914936", sk: "+421950349732" };
+
   function detectLang() {
     var url = new URLSearchParams(location.search).get("lang");
     if (LANGS.indexOf(url) > -1) return url;
@@ -44,6 +47,11 @@
         var v = d[p[1]];
         if (v != null) el.setAttribute(p[0], v.replace(/<[^>]+>/g, ""));
       });
+    });
+
+    $$("[data-tel]").forEach(function (a) {
+      a.href = "tel:" + TEL[lang];
+      a.setAttribute("aria-label", (d["nav.call"] || "") + " " + TEL[lang]);
     });
 
     if (d["meta.title"]) document.title = d["meta.title"];
@@ -157,25 +165,40 @@
       ba.addEventListener(ev, function () { drag = false; });
     });
 
-    // Finom „bemutató” mozdulat, amikor először láthatóvá válik
-    if ("IntersectionObserver" in window &&
-        !window.matchMedia("(prefers-reduced-motion: reduce)").matches) {
-      var teased = false;
+    /* Folyamatos „húzd el” jelzés.
+       A vonal lassan ide-oda söpör, így látszik, hogy a két fotó váltakozik;
+       a gomb közben lüktet. Amint a látogató hozzányúl, végleg leáll. */
+    var reduce = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+    var raf = null;
+    var done = false;
+    var phase = Math.random() * Math.PI * 2;   // hogy a kártyák ne egyszerre mozogjanak
+
+    var pause = function () {
+      if (raf) { cancelAnimationFrame(raf); raf = null; }
+      ba.classList.remove("is-hinting");
+    };
+    var play = function () {
+      if (done || reduce || raf) return;
+      ba.classList.add("is-hinting");
+      var tick = function (t) {
+        // abszolút időből számolva a szünet után is folytonos marad
+        var v = 50 + Math.sin(t / 1900 * Math.PI + phase) * 9;
+        range.value = String(v);
+        set(v);
+        raf = requestAnimationFrame(tick);
+      };
+      raf = requestAnimationFrame(tick);
+    };
+    var stop = function () { done = true; pause(); };
+
+    ["pointerdown", "input", "keydown", "touchstart"].forEach(function (ev) {
+      ba.addEventListener(ev, stop, { passive: true });
+    });
+
+    if ("IntersectionObserver" in window && !reduce) {
       var io = new IntersectionObserver(function (entries) {
-        entries.forEach(function (en) {
-          if (!en.isIntersecting || teased) return;
-          teased = true;
-          var t0 = performance.now();
-          var tick = function (t) {
-            var p = Math.min((t - t0) / 1100, 1);
-            var e = 1 - Math.pow(1 - p, 3);
-            var v = 50 + Math.sin(e * Math.PI) * 26;
-            range.value = String(v); set(v);
-            if (p < 1) requestAnimationFrame(tick);
-          };
-          requestAnimationFrame(tick);
-        });
-      }, { threshold: 0.5 });
+        entries.forEach(function (en) { en.isIntersecting ? play() : pause(); });
+      }, { threshold: 0.35 });
       io.observe(ba);
     }
   });
