@@ -39,7 +39,23 @@ npx -y serve -l 4321 .
 
 Utána: <http://localhost:4321>
 
-## Megosztható előnézet (ügyfélnek)
+## Élő előnézet
+
+**<https://velunamed.github.io/dr-glass-demo/>**
+
+GitHub Pages szolgálja ki a `main` ág gyökeréből. Bárki megnyithatja, akinek
+elküldöd a linket — nem kell hozzá bejelentkezés.
+
+Frissítés: elég pusholni, a Pages 1–2 percen belül újraépíti.
+
+```bash
+git add -A && git commit -m "..." && git push
+```
+
+Az `index.html` `canonical` hivatkozása a `dr-glass.eu`-ra mutat, így a keresők a
+demót nem indexelik az éles oldal helyett.
+
+## Egyfájlos előnézet (offline / csatolmányként)
 
 ```bash
 node tools/build-standalone.mjs
@@ -53,7 +69,7 @@ Az előnézethez a képek 1400 px szélességre és 78-as WebP-minőségre vanna
 tömörítve — a `dist/` így ~2,5 MB, míg az éles `assets/` a teljes minőségű
 képeket tartalmazza.
 
-Jelenlegi publikált előnézet (privát, csak megosztás után látható):
+Van egy privát, claude.ai-n hosztolt változat is:
 <https://claude.ai/code/artifact/b3ccdaae-a427-4a39-86e0-a8b1e42da5c8>
 
 > A beágyazott előnézetben a `tel:` és `mailto:` linkek nem feltétlenül indulnak el
@@ -160,8 +176,8 @@ olvastam ki — nézd át, mielőtt élesítjük:
 
 1. **Kiszállás: csak több autó (flotta) esetén** – megerősítve, 2026-08-23.
    Egyetlen autóhoz nincs kiszállás, azt a telephelyen javítják. Ezért az oldalon
-   a „kiszállás" mindenhol a flottához van kötve (`hero.badge`, `proc2.p`, `ab3.*`,
-   `note1.p`, `a6`). A műhelyi banneren szereplő „MOBIL SZÉLVÉDŐ JAVÍTÁS" feliratot
+   a „kiszállás" mindenhol a flottához van kötve (`proc2.p`, `ab3.*`, `note1.p`, `a6`);
+   a hero badge-ből teljesen ki lett szedve. A műhelyi banneren szereplő „MOBIL SZÉLVÉDŐ JAVÍTÁS" feliratot
    szándékosan nem használjuk általános ígéretként.
 2. **Nyitvatartás: Hétfő–Szombat, 9:00–20:00.**
    Forrás: az OMV-nél lévő banner („09:00–20:00, IDŐPONT EGYEZTETÉS UTÁN") és a
