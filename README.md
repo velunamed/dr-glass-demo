@@ -81,16 +81,41 @@ Van egy privát, claude.ai-n hosztolt változat is:
 > A beágyazott előnézetben a `tel:` és `mailto:` linkek nem feltétlenül indulnak el
 > (a nézegető keretrendszere blokkolhatja) — az éles domainen működni fognak.
 
-## Kiadás (deploy)
+## Élesítés a Rackhost tárhelyen
 
-Az oldal statikus, nem kell szerveroldali futtatókörnyezet. Bárhová feltölthető:
+A domain, a DNS, az e-mail (`mx05.rackhost.hu`) és a HTTPS **marad, ahogy van** —
+csak a tárhelyen cseréljük a WordPress-t a statikus fájlokra.
 
-- **A jelenlegi tárhelyre:** másold a `index.html`, `assets/`, `robots.txt`,
-  `sitemap.xml` fájlokat a domain gyökerébe (a WordPress helyére).
+```bash
+node tools/build-rackhost.mjs
+node tools/make-zip.mjs dist/rackhost dist/dr-glass-rackhost.zip
+```
+
+Ez legyárt egy `dist/dr-glass-rackhost.zip` fájlt (41 fájl, ~2,7 MB), amiben pontosan
+az van, ami az éles oldalhoz kell: `index.html`, `assets/`, `robots.txt`,
+`sitemap.xml` és a `.htaccess`. A `.jpg` eredetik, a `tools/`, a `node_modules/`
+és a GitHub Pages `CNAME` fájlja **nincs** benne.
+
+A csomagot a domain webgyökerébe kell kicsomagolni, a WordPress fájlok helyére.
+A `deploy/htaccess` intézi:
+
+- az `index.html` legyen az alapértelmezett (a WP `index.php` helyett),
+- a régi WordPress címek 301-es átirányítását az új szekció-horgonyokra
+  (`/about/` → `/#rolunk`, `/sk/` → `/?lang=sk`, stb.),
+- a tömörítést és a böngésző-gyorsítótárat.
+
+> Ha a feltöltés után **500-as hibát** kapsz, nevezd át az `.htaccess`-t
+> `htaccess.txt`-re: az oldal működni fog, csak az átirányítások maradnak el.
+
+## Kiadás máshová
+
+Az oldal statikus, nem kell szerveroldali futtatókörnyezet:
+
 - **Vercel / Netlify / Cloudflare Pages:** húzd be a mappát, build parancs nem kell.
+- **GitHub Pages:** már fut, lásd az „Élő előnézet" részt.
 
-A `node_modules/`, `package.json`, `tools/` és a `.jpg` eredetik **nem kellenek** az
-éles kiadáshoz — csak a fejlesztéshez.
+A `node_modules/`, `package.json`, `tools/`, `deploy/` és a `.jpg` eredetik **nem
+kellenek** az éles kiadáshoz — csak a fejlesztéshez.
 
 ---
 

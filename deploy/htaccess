@@ -1,0 +1,60 @@
+# =====================================================================
+#  Dr.Glass – statikus oldal, Rackhost tárhely
+#  A szerver gyökerébe .htaccess néven kell feltölteni (pont a nevében!)
+# =====================================================================
+
+# --- 1) Az index.html legyen az alapértelmezett, ne a WordPress index.php ---
+DirectoryIndex index.html index.php
+
+# --- 2) A WebP formátum ismerete (ha a szerver nem ismerné) ---
+<IfModule mod_mime.c>
+  AddType image/webp .webp
+</IfModule>
+
+# --- 3) A régi WordPress címek átirányítása az új, egyoldalas szerkezetre ---
+#     NE = ne kódolja el a # jelet a horgonyokban
+<IfModule mod_rewrite.c>
+  RewriteEngine On
+
+  # szlovák változat -> a beépített nyelvváltó
+  RewriteRule ^sk/?$                     /?lang=sk         [R=301,NE,L]
+  RewriteRule ^sk/.*$                    /?lang=sk         [R=301,NE,L]
+
+  # magyar aloldalak -> a megfelelő szekció
+  RewriteRule ^about/?$                  /#rolunk          [R=301,NE,L]
+  RewriteRule ^szolgaltatasok/?$         /#szolgaltatasok  [R=301,NE,L]
+  RewriteRule ^szelvedo-javitas/?$       /#arlista         [R=301,NE,L]
+  RewriteRule ^fenyszoro-polirozas/?$    /#felujitas       [R=301,NE,L]
+  RewriteRule ^ozonos-klimatisztitas/?$  /#szolgaltatasok  [R=301,NE,L]
+  RewriteRule ^contact/?$                /#kapcsolat       [R=301,NE,L]
+
+  # maradék WordPress útvonalak -> főoldal
+  RewriteRule ^(wp-admin|wp-login\.php|wp-json|xmlrpc\.php|feed|comments|category|tag|author)(/.*)?$  /  [R=301,L]
+
+  # Minden más, nem létező OLDAL-cím -> főoldal.
+  # A kiterjesztéses kéréseket (pl. .webp, .css) szándékosan kihagyjuk,
+  # hogy egy elgépelt képnév valódi 404-et adjon és ne néma hibát.
+  RewriteCond %{REQUEST_FILENAME} !-f
+  RewriteCond %{REQUEST_FILENAME} !-d
+  RewriteCond %{REQUEST_URI} !\.[a-zA-Z0-9]{2,5}$
+  RewriteRule ^(.*)$ / [R=301,L]
+</IfModule>
+
+# --- 4) Tömörítés ---
+<IfModule mod_deflate.c>
+  AddOutputFilterByType DEFLATE text/html text/css text/plain text/xml \
+                                application/javascript application/json image/svg+xml
+</IfModule>
+
+# --- 5) Böngésző-gyorsítótár ---
+#     A képek neve állandó, ezért hosszabb; a CSS/JS rövidebb, hogy a
+#     módosítások gyorsan látszódjanak.
+<IfModule mod_expires.c>
+  ExpiresActive On
+  ExpiresByType image/webp             "access plus 30 days"
+  ExpiresByType image/png              "access plus 30 days"
+  ExpiresByType image/jpeg             "access plus 30 days"
+  ExpiresByType text/css               "access plus 1 day"
+  ExpiresByType application/javascript "access plus 1 day"
+  ExpiresByType text/html              "access plus 0 seconds"
+</IfModule>
