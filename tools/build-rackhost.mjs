@@ -47,6 +47,9 @@ for (const f of ["index.html", "robots.txt", "sitemap.xml"]) {
 // .htaccess (a repóban pont nélkül tároljuk, hogy jól látszódjon)
 await writeFile(join(OUT, ".htaccess"), await readFile(join(ROOT, "deploy/htaccess"), "utf8"), "utf8");
 
+// az űrlap feldolgozója – csak ide kerül, a GitHub Pages-re nem
+await copyFile(join(ROOT, "deploy/send.php"), join(OUT, "send.php"));
+
 // assets
 await copyTree(join(ROOT, "assets"), join(OUT, "assets"));
 

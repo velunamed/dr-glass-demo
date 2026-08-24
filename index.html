@@ -579,8 +579,13 @@
           <label for="f-msg" data-i18n="ct.msg">Leírás (sérülés típusa / helye / mérete / mennyisége)</label>
           <textarea id="f-msg" name="message" data-i18n-attr="placeholder:ct.msgPh"></textarea>
         </div>
+        <!-- csapda mező robotoknak: ember nem látja, nem is tölti ki -->
+        <div class="hp" aria-hidden="true">
+          <label for="f-website">Ne töltsd ki</label>
+          <input id="f-website" name="website" type="text" tabindex="-1" autocomplete="off">
+        </div>
         <button class="btn btn--block" type="submit"><span data-i18n="ct.send">Elküldöm</span></button>
-        <p class="form__hint" data-i18n="ct.hint">Az űrlap a levelezőprogramodat nyitja meg.</p>
+        <p class="form__hint" id="form-note" data-i18n="ct.hint">Az adataidat csak a megkeresésed megválaszolására használjuk.</p>
       </form>
 
       <!-- elérhetőségek -->

@@ -610,7 +610,13 @@ p:last-child{ margin-bottom:0; }
 .field input::placeholder, .field textarea::placeholder{ color:var(--dim); }
 .field-row{ display:grid; grid-template-columns:1fr 1fr; gap:1rem; }
 @media (max-width:520px){ .field-row{ grid-template-columns:1fr; } }
-.form__hint{ font-size:.8rem; color:var(--dim); margin-top:.9rem; text-align:center; }
+.form__hint{ font-size:.8rem; color:var(--dim); margin-top:.9rem; text-align:center; transition:color .2s; }
+.form__hint--ok{ color:var(--ok); font-weight:700; }
+.form__hint--err{ color:#ff8b80; font-weight:700; }
+#contact-form button[type="submit"][disabled]{ opacity:.6; cursor:progress; transform:none; }
+
+/* csapda mező robotoknak – a képernyőről és a fókuszsorrendből is kikerül */
+.hp{ position:absolute; left:-9999px; width:1px; height:1px; overflow:hidden; }
 
 .loc{ display:grid; gap:1rem; }
 .loc__item{

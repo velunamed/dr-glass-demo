@@ -223,28 +223,71 @@
      ------------------------------------------------------------------ */
   var form = $("#contact-form");
   if (form) {
-    form.addEventListener("submit", function (e) {
-      e.preventDefault();
-      var f = new FormData(form);
+    var btn = $("button[type=submit]", form);
+    var note = $("#form-note", form);
+    var btnLabel = $("span", btn);
+
+    // Ha a szerveren nincs PHP (pl. a GitHub Pages előnézetben),
+    // ugyanaz történik, mint eddig: megnyílik a levelezőprogram.
+    var mailtoFallback = function (f) {
       var lang = document.documentElement.lang === "sk" ? "sk" : "hu";
       var L = lang === "sk"
         ? { subj: "Dopyt z webu – ", name: "Meno", phone: "Telefón", mail: "E-mail", svc: "Služba", msg: "Popis" }
         : { subj: "Ajánlatkérés a weboldalról – ", name: "Név", phone: "Telefon", mail: "E-mail", svc: "Szolgáltatás", msg: "Leírás" };
-
       var body = [
-        L.name  + ": " + (f.get("name")  || ""),
+        L.name + ": " + (f.get("name") || ""),
         L.phone + ": " + (f.get("phone") || ""),
-        L.mail  + ": " + (f.get("email") || ""),
-        L.svc   + ": " + (f.get("service") || ""),
-        "",
-        L.msg + ":",
-        f.get("message") || ""
+        L.mail + ": " + (f.get("email") || ""),
+        L.svc + ": " + (f.get("service") || ""),
+        "", L.msg + ":", f.get("message") || ""
       ].join("\n");
-
-      window.location.href =
-        "mailto:info@dr-glass.eu" +
-        "?subject=" + encodeURIComponent(L.subj + (f.get("name") || "")) +
+      window.location.href = "mailto:info@dr-glass.eu?subject=" +
+        encodeURIComponent(L.subj + (f.get("name") || "")) +
         "&body=" + encodeURIComponent(body);
+    };
+
+    var setNote = function (key, kind) {
+      if (!note) return;
+      var d = DICT[document.documentElement.lang] || DICT.hu;
+      note.textContent = d[key] || "";
+      note.className = "form__hint" + (kind ? " form__hint--" + kind : "");
+      note.setAttribute("data-i18n", key);
+    };
+
+    form.addEventListener("submit", function (e) {
+      e.preventDefault();
+      if (!form.reportValidity()) return;
+
+      var f = new FormData(form);
+      var d = DICT[document.documentElement.lang] || DICT.hu;
+
+      btn.disabled = true;
+      if (btnLabel) btnLabel.textContent = d["ct.sending"] || "…";
+      setNote("ct.sending");
+
+      fetch("send.php", { method: "POST", body: f })
+        .then(function (res) {
+          if (res.status === 404 || res.status === 405 || res.status === 501) {
+            throw new Error("nincs-backend");   // statikus tárhely -> mailto
+          }
+          return res.json().then(function (j) {
+            if (!res.ok || j.status !== "ok") throw new Error(j.message || "hiba");
+            return j;
+          });
+        })
+        .then(function () {
+          form.reset();
+          setNote("ct.ok", "ok");
+        })
+        .catch(function (err) {
+          if (err && err.message === "nincs-backend") { mailtoFallback(f); setNote("ct.hint"); }
+          else setNote("ct.err", "err");
+        })
+        .finally(function () {
+          btn.disabled = false;
+          var dd = DICT[document.documentElement.lang] || DICT.hu;
+          if (btnLabel) btnLabel.textContent = dd["ct.send"] || "Elküldöm";
+        });
     });
   }
 
