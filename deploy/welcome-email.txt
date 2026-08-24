@@ -15,25 +15,30 @@ Az oldal megnyitása: https://dr-glass.eu/
 
 MI VÁLTOZOTT
 
-01  Előtte / utána csúszkák
+01  Modernebb, technikailag fejlettebb és jelentősen gyorsabb oldal
+    A WordPress és a mögötte futó adatbázis helyét saját, tömörre optimalizált
+    kód vette át — nincs mit betölteni, ami nem kell. Mobilon is azonnal
+    megjelenik.
+
+02  Előtte / utána csúszkák
     A javítások fotói mostantól elhúzhatók: a látogató a saját szemével látja
     a különbséget, nem csak egy képet néz.
 
-02  Fényszóró-felújítás külön szekcióban
+03  Fényszóró-felújítás külön szekcióban
     A kemencés és oldószeres munka, a két ragasztótípus magyarázata és a
     munkadíjak — kiemelve, hogy felújításhoz kiszerelve kérjük a lámpákat.
 
-03  Magyar és szlovák egy kattintásra
+04  Magyar és szlovák egy kattintásra
     Szlovák nézetben a hívás gomb rögtön a +421-es számot tárcsázza, és az árak
     euróban jelennek meg.
 
-04  Működő kapcsolati űrlap
+05  Működő kapcsolati űrlap
     Ami beérkezik, az az info@dr-glass.eu címre megy, és elég rányomni a Válasz
     gombra — a levél már az érdeklődőnek megy vissza.
 
-05  Gyors mobilon is
-    A képek töredékére zsugorodtak, és a korábbi Google-találatok sem vesznek
-    el: minden régi cím a megfelelő szekcióra irányít át.
+06  A Google-találatok megmaradnak
+    Minden korábbi cím a megfelelő szekcióra irányít át, tehát aki a keresőből
+    érkezik, ott folytatja, ahol eddig.
 
 
 KÉT ADATOT ÉRDEMES ÁTNÉZNI
@@ -43,10 +48,6 @@ régi weboldalról — ha változott, javítjuk.
 
 A fényszóró-polírozás ára a régi oldalon 16 000 Ft, a krétatáblán viszont
 1 db 35 €, 2 db 60 €. Egyelőre a weboldalas ár szerepel — melyik az érvényes?
-
-
-Szöveg, ár vagy fotó módosítása bármikor kérhető — elég egy válasz erre a
-levélre.
 
 --
 dr-glass.eu · info@dr-glass.eu
