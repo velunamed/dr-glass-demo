@@ -53,6 +53,11 @@ await copyFile(join(ROOT, "deploy/send.php"), join(OUT, "send.php"));
 // assets
 await copyTree(join(ROOT, "assets"), join(OUT, "assets"));
 
+// az e-mail képei: itt a .jpg is kell, mert a levelezők nem tudják a WebP-t
+KEEP.add(".jpg");
+await copyTree(join(ROOT, "assets/email"), join(OUT, "assets/email"));
+KEEP.delete(".jpg");
+
 // ellenőrzés: minden hivatkozott kép megvan-e
 const html = await readFile(join(OUT, "index.html"), "utf8");
 const refs = [...new Set([...html.matchAll(/(?:src|href)="((?:assets)\/[^"]+)"/g)].map((m) => m[1]))];
