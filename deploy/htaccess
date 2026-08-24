@@ -16,6 +16,10 @@ DirectoryIndex index.html index.php
 <IfModule mod_rewrite.c>
   RewriteEngine On
 
+  # www.dr-glass.eu -> dr-glass.eu (korábban a WordPress intézte)
+  RewriteCond %{HTTP_HOST} ^www\.(.+)$ [NC]
+  RewriteRule ^(.*)$ https://%1/$1 [R=301,L]
+
   # szlovák változat -> a beépített nyelvváltó
   RewriteRule ^sk/?$                     /?lang=sk         [R=301,NE,L]
   RewriteRule ^sk/.*$                    /?lang=sk         [R=301,NE,L]
