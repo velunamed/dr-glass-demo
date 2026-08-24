@@ -1,0 +1,46 @@
+name: Feltöltés a Rackhostra
+
+# Minden main ágra pusholt módosítás után lefut, illetve kézzel is indítható
+# (Actions fül → „Feltöltés a Rackhostra" → Run workflow).
+on:
+  push:
+    branches: [main]
+  workflow_dispatch:
+
+concurrency:
+  group: rackhost-deploy
+  cancel-in-progress: false
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Kód letöltése
+        uses: actions/checkout@v4
+
+      - name: Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: "22"
+
+      # Összeállítja a dist/rackhost/ mappát: index.html, assets/, robots.txt,
+      # sitemap.xml, .htaccess — a .jpg eredetik és a fejlesztői fájlok nélkül.
+      # Nincs npm függősége, ezért nem kell npm ci.
+      - name: Éles csomag összeállítása
+        run: node tools/build-rackhost.mjs
+
+      - name: FTP feltöltés
+        uses: SamKirkland/FTP-Deploy-Action@v4.3.5
+        with:
+          server: ${{ secrets.FTP_SERVER }}
+          username: ${{ secrets.FTP_USERNAME }}
+          password: ${{ secrets.FTP_PASSWORD }}
+          protocol: ftps          # titkosított kapcsolat; ha a Rackhost nem engedi: ftp
+          local-dir: ./dist/rackhost/
+          server-dir: ${{ vars.FTP_SERVER_DIR }}
+          # Csak a megváltozott fájlokat tölti fel. NEM töröl semmit a szerverről —
+          # a régi WordPress fájlok eltakarítása egyszeri, kézi lépés.
+          dangerous-clean-slate: false
+          exclude: |
+            **/.git*
+            **/.git*/**
