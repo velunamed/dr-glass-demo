@@ -5,3 +5,4 @@ dist/
 backup-ftp/
 .drglass-ftp.json
 *ftp*.json
+dist/mailer/
