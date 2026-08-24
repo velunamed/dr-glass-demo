@@ -12,9 +12,9 @@
   /* Csak a modern kliensek látják; minden fontos stílus soron belül is ott van. */
   @media only screen and (max-width:620px){
     .wrap{ width:100% !important; }
-    .px{ padding-left:22px !important; padding-right:22px !important; }
+    .px{ padding-left:24px !important; padding-right:24px !important; }
     .h1{ font-size:28px !important; line-height:34px !important; }
-    .stack{ display:block !important; width:100% !important; padding-right:0 !important; padding-bottom:14px !important; }
+    .stat{ display:block !important; width:100% !important; padding:0 0 18px 0 !important; text-align:left !important; }
   }
 </style>
 </head>
@@ -32,51 +32,44 @@
 
     <!-- fejléc -->
     <tr>
-      <td align="center" bgcolor="#05303f" style="background-color:#05303f; padding:26px 20px 22px 20px;">
-        <img src="https://dr-glass.eu/assets/email/logo-white.png" width="180" alt="Dr.Glass"
-             style="display:block; border:0; width:180px; max-width:180px; height:auto;" />
+      <td align="center" bgcolor="#05303f" style="background-color:#05303f; padding:26px 20px;">
+        <p style="margin:0; font-family:Arial,Helvetica,sans-serif; font-size:22px; line-height:26px; font-weight:bold; letter-spacing:3px; color:#ffffff;">
+          DR.GLASS
+        </p>
+        <p style="margin:6px 0 0 0; font-family:Arial,Helvetica,sans-serif; font-size:11px; line-height:16px; letter-spacing:2px; text-transform:uppercase; color:#55c1ea;">
+          Szélvédő &middot; Fényszóró &middot; Klíma
+        </p>
       </td>
     </tr>
 
-    <!-- fejléckép -->
-    <tr>
-      <td style="padding:0; font-size:0; line-height:0;">
-        <a href="https://dr-glass.eu/" style="text-decoration:none;">
-          <img src="https://dr-glass.eu/assets/email/hero.jpg" width="600" alt="Dr.Glass szélvédőjavító sátor este"
-               style="display:block; border:0; width:100%; max-width:600px; height:auto;" />
-        </a>
-      </td>
-    </tr>
+    <!-- kék csík -->
+    <tr><td bgcolor="#2b93c8" style="background-color:#2b93c8; height:4px; font-size:0; line-height:0;">&nbsp;</td></tr>
 
     <!-- cím + bevezető -->
     <tr>
-      <td class="px" style="padding:34px 40px 0 40px;">
+      <td class="px" style="padding:38px 40px 0 40px;">
         <p style="margin:0 0 14px 0; font-family:Arial,Helvetica,sans-serif; font-size:12px; line-height:16px; letter-spacing:2px; text-transform:uppercase; color:#55c1ea; font-weight:bold;">
           Élesben van
         </p>
-        <h1 class="h1" style="margin:0 0 16px 0; font-family:Arial,Helvetica,sans-serif; font-size:34px; line-height:40px; color:#ffffff; font-weight:bold;">
-          Elkészült az új weboldalatok.
+        <h1 class="h1" style="margin:0 0 18px 0; font-family:Arial,Helvetica,sans-serif; font-size:34px; line-height:41px; color:#ffffff; font-weight:bold;">
+          Elkészült az új dr-glass.eu
         </h1>
-        <p style="margin:0 0 14px 0; font-family:Arial,Helvetica,sans-serif; font-size:16px; line-height:26px; color:#c3d5df;">
-          Szia Peter!
-        </p>
-        <p style="margin:0 0 26px 0; font-family:Arial,Helvetica,sans-serif; font-size:16px; line-height:26px; color:#c3d5df;">
-          A <b style="color:#ffffff;">dr-glass.eu</b> mostantól az új oldalt szolgálja ki. A régi WordPress lecserélve,
-          minden szöveg, ár és fotó átkerült — semmi nem veszett el. Az e-mail-címeitek és a domain
-          érintetlenek maradtak.
+        <p style="margin:0 0 28px 0; font-family:Arial,Helvetica,sans-serif; font-size:16px; line-height:26px; color:#c3d5df;">
+          A domain mostantól az új oldalt szolgálja ki. A régi WordPress lecserélve, minden szöveg,
+          ár és fotó átkerült — semmi nem veszett el. Az e-mail-címek és a domain érintetlenek maradtak.
         </p>
       </td>
     </tr>
 
     <!-- gomb -->
     <tr>
-      <td class="px" align="left" style="padding:0 40px 34px 40px;">
+      <td class="px" align="left" style="padding:0 40px 36px 40px;">
         <table role="presentation" cellpadding="0" cellspacing="0" border="0">
           <tr>
             <td bgcolor="#2b93c8" style="background-color:#2b93c8; border-radius:999px;">
               <a href="https://dr-glass.eu/"
                  style="display:inline-block; padding:15px 32px; font-family:Arial,Helvetica,sans-serif; font-size:16px; font-weight:bold; color:#04131b; text-decoration:none; border-radius:999px;">
-                Megnézem az oldalt &rarr;
+                dr-glass.eu megnyitása &rarr;
               </a>
             </td>
           </tr>
@@ -84,13 +77,32 @@
       </td>
     </tr>
 
-    <!-- elválasztó -->
-    <tr><td class="px" style="padding:0 40px;"><div style="height:1px; background-color:#1c3341; font-size:0; line-height:0;">&nbsp;</div></td></tr>
+    <!-- számsor -->
+    <tr>
+      <td class="px" style="padding:0 40px 34px 40px;">
+        <table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0" bgcolor="#122b39" style="background-color:#122b39; border-radius:12px;">
+          <tr>
+            <td class="stat" width="33%" align="center" style="padding:20px 8px;">
+              <p style="margin:0; font-family:Arial,Helvetica,sans-serif; font-size:26px; line-height:30px; font-weight:bold; color:#55c1ea;">2</p>
+              <p style="margin:4px 0 0 0; font-family:Arial,Helvetica,sans-serif; font-size:12px; line-height:18px; color:#93aab8;">nyelv egy kattintásra</p>
+            </td>
+            <td class="stat" width="34%" align="center" style="padding:20px 8px;">
+              <p style="margin:0; font-family:Arial,Helvetica,sans-serif; font-size:26px; line-height:30px; font-weight:bold; color:#55c1ea;">8</p>
+              <p style="margin:4px 0 0 0; font-family:Arial,Helvetica,sans-serif; font-size:12px; line-height:18px; color:#93aab8;">munka a galériában</p>
+            </td>
+            <td class="stat" width="33%" align="center" style="padding:20px 8px;">
+              <p style="margin:0; font-family:Arial,Helvetica,sans-serif; font-size:26px; line-height:30px; font-weight:bold; color:#55c1ea;">3,5&times;</p>
+              <p style="margin:4px 0 0 0; font-family:Arial,Helvetica,sans-serif; font-size:12px; line-height:18px; color:#93aab8;">kisebb képanyag</p>
+            </td>
+          </tr>
+        </table>
+      </td>
+    </tr>
 
     <!-- mi változott -->
     <tr>
-      <td class="px" style="padding:30px 40px 6px 40px;">
-        <h2 style="margin:0 0 20px 0; font-family:Arial,Helvetica,sans-serif; font-size:20px; line-height:26px; color:#ffffff; font-weight:bold;">
+      <td class="px" style="padding:0 40px 6px 40px;">
+        <h2 style="margin:0 0 22px 0; font-family:Arial,Helvetica,sans-serif; font-size:20px; line-height:26px; color:#ffffff; font-weight:bold;">
           Mi változott
         </h2>
       </td>
@@ -100,74 +112,64 @@
       <td class="px" style="padding:0 40px 8px 40px;">
         <table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0">
           <tr>
-            <td width="26" valign="top" style="font-family:Arial,Helvetica,sans-serif; font-size:16px; line-height:24px; color:#55c1ea; font-weight:bold;">01</td>
-            <td valign="top" style="padding-bottom:16px; font-family:Arial,Helvetica,sans-serif; font-size:15px; line-height:24px; color:#c3d5df;">
-              <b style="color:#ffffff;">Előtte / utána csúszkák.</b> A javításaitokat mostantól el lehet húzni: a látogató
-              a saját szemével látja a különbséget, nem csak egy fotót néz.
+            <td width="30" valign="top" style="font-family:Arial,Helvetica,sans-serif; font-size:16px; line-height:24px; color:#55c1ea; font-weight:bold;">01</td>
+            <td valign="top" style="padding-bottom:18px; font-family:Arial,Helvetica,sans-serif; font-size:15px; line-height:24px; color:#c3d5df;">
+              <b style="color:#ffffff;">Előtte / utána csúszkák.</b> A javítások fotói mostantól elhúzhatók: a látogató
+              a saját szemével látja a különbséget, nem csak egy képet néz.
             </td>
           </tr>
           <tr>
-            <td width="26" valign="top" style="font-family:Arial,Helvetica,sans-serif; font-size:16px; line-height:24px; color:#55c1ea; font-weight:bold;">02</td>
-            <td valign="top" style="padding-bottom:16px; font-family:Arial,Helvetica,sans-serif; font-size:15px; line-height:24px; color:#c3d5df;">
-              <b style="color:#ffffff;">Fényszóró-felújítás külön szekcióban.</b> A kemencés és oldószeres munka, a két
-              ragasztótípus magyarázata és a munkadíjak — kiemelve, hogy felújításhoz kiszerelve kéritek a lámpákat.
+            <td width="30" valign="top" style="font-family:Arial,Helvetica,sans-serif; font-size:16px; line-height:24px; color:#55c1ea; font-weight:bold;">02</td>
+            <td valign="top" style="padding-bottom:18px; font-family:Arial,Helvetica,sans-serif; font-size:15px; line-height:24px; color:#c3d5df;">
+              <b style="color:#ffffff;">Fényszóró-felújítás külön szekcióban.</b> A kemencés és oldószeres munka,
+              a két ragasztótípus magyarázata és a munkadíjak — kiemelve, hogy felújításhoz kiszerelve kérjük a lámpákat.
             </td>
           </tr>
           <tr>
-            <td width="26" valign="top" style="font-family:Arial,Helvetica,sans-serif; font-size:16px; line-height:24px; color:#55c1ea; font-weight:bold;">03</td>
-            <td valign="top" style="padding-bottom:16px; font-family:Arial,Helvetica,sans-serif; font-size:15px; line-height:24px; color:#c3d5df;">
-              <b style="color:#ffffff;">Magyar és szlovák egy kattintásra.</b> Szlovák nézetben a hívás gomb rögtön a
-              +421-es számot tárcsázza, és az árak euróban jelennek meg.
+            <td width="30" valign="top" style="font-family:Arial,Helvetica,sans-serif; font-size:16px; line-height:24px; color:#55c1ea; font-weight:bold;">03</td>
+            <td valign="top" style="padding-bottom:18px; font-family:Arial,Helvetica,sans-serif; font-size:15px; line-height:24px; color:#c3d5df;">
+              <b style="color:#ffffff;">Magyar és szlovák egy kattintásra.</b> Szlovák nézetben a hívás gomb rögtön
+              a +421-es számot tárcsázza, és az árak euróban jelennek meg.
             </td>
           </tr>
           <tr>
-            <td width="26" valign="top" style="font-family:Arial,Helvetica,sans-serif; font-size:16px; line-height:24px; color:#55c1ea; font-weight:bold;">04</td>
-            <td valign="top" style="padding-bottom:16px; font-family:Arial,Helvetica,sans-serif; font-size:15px; line-height:24px; color:#c3d5df;">
+            <td width="30" valign="top" style="font-family:Arial,Helvetica,sans-serif; font-size:16px; line-height:24px; color:#55c1ea; font-weight:bold;">04</td>
+            <td valign="top" style="padding-bottom:18px; font-family:Arial,Helvetica,sans-serif; font-size:15px; line-height:24px; color:#c3d5df;">
               <b style="color:#ffffff;">Működő kapcsolati űrlap.</b> Ami beérkezik, az az
               <span style="color:#ffffff;">info@dr-glass.eu</span> címre megy, és elég rányomni a Válasz gombra —
               a levél már az érdeklődőnek megy vissza.
             </td>
           </tr>
           <tr>
-            <td width="26" valign="top" style="font-family:Arial,Helvetica,sans-serif; font-size:16px; line-height:24px; color:#55c1ea; font-weight:bold;">05</td>
+            <td width="30" valign="top" style="font-family:Arial,Helvetica,sans-serif; font-size:16px; line-height:24px; color:#55c1ea; font-weight:bold;">05</td>
             <td valign="top" style="padding-bottom:6px; font-family:Arial,Helvetica,sans-serif; font-size:15px; line-height:24px; color:#c3d5df;">
-              <b style="color:#ffffff;">Gyors mobilon is.</b> A képek töredékére zsugorodtak, és a régi Google-találataitok
-              sem vesznek el: minden korábbi cím a megfelelő szekcióra irányít át.
+              <b style="color:#ffffff;">Gyors mobilon is.</b> A képek töredékére zsugorodtak, és a korábbi
+              Google-találatok sem vesznek el: minden régi cím a megfelelő szekcióra irányít át.
             </td>
           </tr>
         </table>
       </td>
     </tr>
 
-    <!-- előtte/utána kép -->
-    <tr>
-      <td class="px" style="padding:22px 40px 0 40px;">
-        <a href="https://dr-glass.eu/#munkaink" style="text-decoration:none;">
-          <img src="https://dr-glass.eu/assets/email/before-after.jpg" width="520" alt="Mercedes fényszóró polírozás előtt és után"
-               style="display:block; border:0; width:100%; max-width:520px; height:auto; border-radius:10px;" />
-        </a>
-        <p style="margin:10px 0 0 0; font-family:Arial,Helvetica,sans-serif; font-size:13px; line-height:20px; color:#93aab8;">
-          A saját munkátok — az oldalon ez egy húzható csúszka.
-        </p>
-      </td>
-    </tr>
+    <!-- elválasztó -->
+    <tr><td class="px" style="padding:26px 40px 0 40px;"><div style="height:1px; background-color:#1c3341; font-size:0; line-height:0;">&nbsp;</div></td></tr>
 
     <!-- kérés -->
     <tr>
-      <td class="px" style="padding:30px 40px 0 40px;">
+      <td class="px" style="padding:26px 40px 0 40px;">
         <table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0" bgcolor="#122b39" style="background-color:#122b39; border-radius:12px;">
           <tr>
-            <td style="padding:20px 22px;">
-              <p style="margin:0 0 10px 0; font-family:Arial,Helvetica,sans-serif; font-size:15px; line-height:22px; color:#ffffff; font-weight:bold;">
-                Két dolgot kérnék, nézzétek át
+            <td style="padding:20px 22px; border-left:3px solid #2b93c8;">
+              <p style="margin:0 0 12px 0; font-family:Arial,Helvetica,sans-serif; font-size:15px; line-height:22px; color:#ffffff; font-weight:bold;">
+                Két adatot érdemes átnézni
               </p>
-              <p style="margin:0 0 8px 0; font-family:Arial,Helvetica,sans-serif; font-size:14px; line-height:22px; color:#c3d5df;">
-                <b style="color:#ffffff;">A nyitvatartást</b> (Hétfő–Szombat, 9:00–20:00) a műhelyi tábláitokról olvastam ki,
-                nem a régi weboldalról — ha változott, szóljatok.
+              <p style="margin:0 0 10px 0; font-family:Arial,Helvetica,sans-serif; font-size:14px; line-height:22px; color:#c3d5df;">
+                <b style="color:#ffffff;">A nyitvatartás</b> (Hétfő–Szombat, 9:00–20:00) a műhelyi táblákról származik,
+                nem a régi weboldalról — ha változott, javítjuk.
               </p>
               <p style="margin:0; font-family:Arial,Helvetica,sans-serif; font-size:14px; line-height:22px; color:#c3d5df;">
                 <b style="color:#ffffff;">A fényszóró-polírozás ára</b> a régi oldalon 16 000 Ft, a krétatáblán viszont
-                1 db 35 €, 2 db 60 €. Egyelőre a weboldalas ár maradt — írjátok meg, melyik az érvényes.
+                1 db 35 €, 2 db 60 €. Egyelőre a weboldalas ár szerepel — melyik az érvényes?
               </p>
             </td>
           </tr>
@@ -175,14 +177,11 @@
       </td>
     </tr>
 
-    <!-- aláírás -->
+    <!-- zárás -->
     <tr>
-      <td class="px" style="padding:28px 40px 34px 40px;">
-        <p style="margin:0 0 4px 0; font-family:Arial,Helvetica,sans-serif; font-size:15px; line-height:24px; color:#c3d5df;">
-          Ha bármit módosítanátok — szöveget, árat, fotót — csak írjatok, és megcsinálom.
-        </p>
-        <p style="margin:16px 0 0 0; font-family:Arial,Helvetica,sans-serif; font-size:15px; line-height:24px; color:#ffffff;">
-          Üdv,<br /><b>Marton</b>
+      <td class="px" style="padding:26px 40px 34px 40px;">
+        <p style="margin:0; font-family:Arial,Helvetica,sans-serif; font-size:15px; line-height:24px; color:#c3d5df;">
+          Szöveg, ár vagy fotó módosítása bármikor kérhető — elég egy válasz erre a levélre.
         </p>
       </td>
     </tr>
