@@ -92,8 +92,8 @@ window.DRG_I18N = {
     /* --- webshop --- */
     "shop.eyebrow": "Saját webshopunk",
     "shop.h": "Nem menthető a búra? Nálunk újat kapsz.",
-    "shop.p": "A Bura Shopban gyári minőségű, UV-védett fényszóró-plexiket és lámpaburkolatokat árulunk. Ha a polírozás vagy a felújítás már nem hoz vissza egy lámpát, itt találsz rá új búrát — szintén a mi üzemeltetésünkben.",
-    "shop.cta": "Irány a Bura Shop",
+    "shop.p": "A Búra Shopban gyári minőségű, UV-védett fényszóró-plexiket és lámpaburkolatokat árulunk. Ha a polírozás vagy a felújítás már nem hoz vissza egy lámpát, itt találsz rá új búrát — szintén a mi üzemeltetésünkben.",
+    "shop.cta": "Irány a Búra Shop",
     "shop.f1": "Audi · BMW · Mercedes-Benz · Volvo",
     "shop.f2": "Szállítás 3–5 munkanap alatt",
     "shop.f3": "3000+ átvevőpont Szlovákiában",
