@@ -17,6 +17,9 @@
   // az elsődleges hívás gombok a nyelvhez tartozó számot tárcsázzák
   var TEL = { hu: "+36203914936", sk: "+421950349732" };
 
+  // a Bura Shop a látogató nyelvén nyílik meg
+  var SHOP = { hu: "https://www.burashop.sk/hu/", sk: "https://www.burashop.sk/" };
+
   function detectLang() {
     var url = new URLSearchParams(location.search).get("lang");
     if (LANGS.indexOf(url) > -1) return url;
@@ -53,6 +56,8 @@
       a.href = "tel:" + TEL[lang];
       a.setAttribute("aria-label", (d["nav.call"] || "") + " " + TEL[lang]);
     });
+
+    $$("[data-shop]").forEach(function (a) { a.href = SHOP[lang]; });
 
     if (d["meta.title"]) document.title = d["meta.title"];
     var md = $('meta[name="description"]');

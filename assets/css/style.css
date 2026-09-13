@@ -193,7 +193,8 @@ p:last-child{ margin-bottom:0; }
 .burger[aria-expanded="true"] span:nth-child(2){ opacity:0; }
 .burger[aria-expanded="true"] span:nth-child(3){ transform:rotate(-45deg); }
 
-@media (max-width:960px){
+/* 1080px: nyolc menüpont alatta már nem fér ki a logó és a gombok mellett */
+@media (max-width:1080px){
   .burger{ display:block; }
   /* a .nav ilyenkor fixed, azaz kikerül a flow-ból — a jobb szélre kell tolni a gombokat */
   .header__side{ margin-left:auto; }
@@ -366,6 +367,36 @@ p:last-child{ margin-bottom:0; }
 .fx-shot{ margin:0; border:1px solid var(--line); border-radius:var(--radius); overflow:hidden; background:var(--surface); }
 .fx-shot img{ width:100%; aspect-ratio:4/3; object-fit:cover; object-position:center 42%; }
 .fx-shot figcaption{ padding:.8rem 1.05rem; font-size:.85rem; color:var(--muted); }
+
+/* ---------- Webshop sáv ---------- */
+.shop{
+  position:relative; isolation:isolate; overflow:hidden;
+  display:grid; grid-template-columns:1.15fr .85fr; gap:clamp(1.6rem,4vw,3rem);
+  align-items:center;
+  padding:clamp(1.8rem,4vw,2.8rem);
+  border:1px solid rgba(43,147,200,.45); border-radius:var(--radius-l);
+  background:linear-gradient(135deg, #123246 0%, #0a1c27 62%, var(--surface) 100%);
+  box-shadow:var(--shadow);
+}
+@media (max-width:860px){ .shop{ grid-template-columns:1fr; } }
+
+/* halvány bevásárlótáska vízjel a háttérben */
+.shop__mark{
+  position:absolute; z-index:-1; right:-30px; top:50%;
+  width:260px; height:260px; margin-top:-130px;
+  color:var(--brand); opacity:.07; pointer-events:none;
+}
+@media (max-width:860px){ .shop__mark{ right:-60px; width:200px; height:200px; margin-top:-100px; } }
+
+.shop__body h2{ font-size:clamp(1.5rem,1.1rem+1.6vw,2.2rem); margin-bottom:.6rem; }
+.shop__body > p[data-i18n]{ color:#c3d5df; font-size:.98rem; margin-bottom:1.5rem; max-width:46ch; }
+.shop__cta{ gap:.55rem; }
+.shop__cta svg{ width:.95em; height:.95em; }
+
+.shop__facts{ list-style:none; margin:0; padding:0; display:grid; gap:.85rem; }
+.shop__facts li{ display:flex; gap:.75rem; align-items:flex-start; font-size:.93rem; color:#c3d5df; line-height:1.45; }
+.shop__facts svg{ width:19px; height:19px; flex:none; margin-top:.15em; color:var(--brand-bright); }
+.shop__brands{ font-family:var(--ff-num); font-weight:700; color:#ffffff; letter-spacing:-.01em; }
 
 /* ---------- Process ---------- */
 .steps{ display:grid; grid-template-columns:repeat(auto-fit,minmax(220px,1fr)); gap:1rem; counter-reset:s; }

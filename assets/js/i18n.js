@@ -11,6 +11,7 @@ window.DRG_I18N = {
     /* --- nav --- */
     "nav.services": "Szolgáltatások",
     "nav.resto": "Felújítás",
+    "nav.shop": "Webshop",
     "nav.works": "Munkáink",
     "nav.pricing": "Árlista",
     "nav.about": "Rólunk",
@@ -87,6 +88,16 @@ window.DRG_I18N = {
     "fx.cta": "Árajánlatot kérek",
     "fx.cap1": "Ipari kemencénk – szabályozott hőfok a sérülésmentes bontáshoz",
     "fx.cap2": "Kiszerelt fényszóró a kemencében",
+
+    /* --- webshop --- */
+    "shop.eyebrow": "Saját webshopunk",
+    "shop.h": "Nem menthető a búra? Nálunk újat kapsz.",
+    "shop.p": "A Bura Shopban gyári minőségű, UV-védett fényszóró-plexiket és lámpaburkolatokat árulunk. Ha a polírozás vagy a felújítás már nem hoz vissza egy lámpát, itt találsz rá új búrát — szintén a mi üzemeltetésünkben.",
+    "shop.cta": "Irány a Bura Shop",
+    "shop.f1": "Audi · BMW · Mercedes-Benz · Volvo",
+    "shop.f2": "Szállítás 3–5 munkanap alatt",
+    "shop.f3": "3000+ átvevőpont Szlovákiában",
+    "shop.f4": "Sértetlen csomag garanciával",
 
     /* --- process --- */
     "proc.eyebrow": "Hogyan zajlik",
@@ -252,6 +263,7 @@ window.DRG_I18N = {
 
     "nav.services": "Služby",
     "nav.resto": "Renovácia",
+    "nav.shop": "E-shop",
     "nav.works": "Naša práca",
     "nav.pricing": "Cenník",
     "nav.about": "O nás",
@@ -325,6 +337,16 @@ window.DRG_I18N = {
     "fx.cta": "Chcem cenovú ponuku",
     "fx.cap1": "Naša priemyselná pec – riadená teplota pre demontáž bez poškodenia",
     "fx.cap2": "Vymontovaný svetlomet v peci",
+
+    /* --- e-shop --- */
+    "shop.eyebrow": "Náš vlastný e-shop",
+    "shop.h": "Kryt sa už nedá zachrániť? Nový nájdete u nás.",
+    "shop.p": "V Bura Shope predávame kryty svetlometov a plexisklá v kvalite originálu, s UV ochranou. Ak leštenie ani renovácia svetlomet už nezachráni, tu nájdete nový kryt — e-shop prevádzkujeme tiež my.",
+    "shop.cta": "Prejsť do Bura Shopu",
+    "shop.f1": "Audi · BMW · Mercedes-Benz · Volvo",
+    "shop.f2": "Doručenie do 3 – 5 pracovných dní",
+    "shop.f3": "Vyše 3000 výdajných miest na Slovensku",
+    "shop.f4": "Garancia doručenia nepoškodeného tovaru",
 
     "proc.eyebrow": "Ako to prebieha",
     "proc.h": "Štyri kroky k bezchybnému sklu",
